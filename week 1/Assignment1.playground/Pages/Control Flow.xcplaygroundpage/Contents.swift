@@ -18,47 +18,52 @@ print("---above is Q1 ")
  
 Please find a method which can help us complete these requirements.
  */
-for numbers in 5...10 {
-    print(numbers)
+for number in lottoNumbers.reversed(){
+    print(number)
 }
 print("---")
 
-let Numbers = [ 10 , 9 , 8 , 7 , 6 , 5 ]
-for numbers in Numbers {
-    if numbers % 2 == 0 {
-        print(numbers)
+for number in lottoNumbers {
+    if number % 2 == 0 {
+        print(number)
     }
 }
 print("---above is Q2")
 /*:
 3. Please use while loop to solve above question.
  */
-var i = 5
-while i < 11 {
-    print(i)
+var i = 0
+while i < 6 {
+    print(lottoNumbers.reversed()[i])
     i += 1
 }
 print("---")
-var j = 10
-while j > 5 {
-    print(j)
-    j -= 2
+
+var j = 0
+while j < 6 {
+    if lottoNumbers[j] % 2 == 0 {
+        print(lottoNumbers[j])
+    }
+    j += 1
 }
 print("---above is Q3")
 /*:
 4. Please use repeat-while loop to solve question 2.
  */
-var k = 5
+var k = 0
 repeat {
-    print(k)
+    print(lottoNumbers.reversed()[k])
     k += 1
-} while k < 11
+} while k < 6
 print("---")
-var m = 10
+
+var m = 0
 repeat {
-    print(m)
-    m -= 2
-} while m > 5
+    if lottoNumbers[m] % 2 == 0 {
+    print(lottoNumbers[m])
+    }
+    m += 1
+} while m < 6
 print("---above is Q4")
 /*:
 5. What are the differences between while and repeat-while?
@@ -96,3 +101,4 @@ default:
 }
 print("---above is Q7")
 //: [Next](@next)
+
