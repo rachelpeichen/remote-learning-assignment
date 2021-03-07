@@ -49,10 +49,6 @@ So now we can create new barcodes:
 /*: 2. Optional is a very special data type in Swift. Take  `var a: Int ? = 10`  for example, the value of  `a`  will be ` nil`  or  `Int` . You should learn how to deal with optional data type.
  
 ● People would like to have pets, but not everyone could have one. Declare a class Pet with name property and a class People with pet property which will store a Pet instance or nil . Please try to figure out what data type is suitable for these properties in Pet and People.
- 
-● Please create a People instance and use guard let to unwrap the pet property.
- 
-● Please create another People instance and use if let to unwrap the pet property.
  */
 class Pet {
     var petName: String
@@ -64,11 +60,21 @@ class Pet {
 class People {
     var pet: Pet?
 }
-
+/*: ● Please create a People instance and use guard let to unwrap the pet property.
+ */
 let Andy = People()
-let AndyPet = Andy.pet!.petName
-// This triggers a runtime error because there's no pet value to unwrap.
+// let AndyPet = Andy.pet!.petName // This triggers a runtime error because there's no pet value to unwrap.
 
+func unwrapGuard() {
+    guard let AndyPet = Andy.pet?.petName else {
+        print("Andy didn't have a pet!")
+        return
+    }
+    print("Hello, \(AndyPet)!")
+}
+unwrapGuard()
+/*: ● Please create another People instance and use if let to unwrap the pet property.
+ */
 let Mike = People()
 if let MikePet = Mike.pet?.petName {
     print("Mike's pet is \(MikePet)")

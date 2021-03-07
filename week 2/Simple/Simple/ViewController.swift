@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(text.count)))
         
         // Set the text at the randomIndex as the text of the label
-        showText.text = text[randomIndex]
+        showText?.text = text[randomIndex]
         
         // Change random color
         self.view.backgroundColor = getRandomColor()

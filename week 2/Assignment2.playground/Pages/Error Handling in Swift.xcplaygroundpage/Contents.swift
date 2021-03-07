@@ -7,7 +7,7 @@
 enum GuessNumberGameError: Error {
     case wrongNumber
 }
-
+    
 class GuessNumerGame {
     var targetNumber = 10
     
